@@ -5,6 +5,7 @@ import ProjectCard from "./projectcard.component";
 import { useSelector, useDispatch } from "react-redux";
 import About from "./about.component";
 
+
 const Body = () => {
   const { projects } = useSelector((state) => state.project);
   const dispatch = useDispatch();
