@@ -1,0 +1,41 @@
+@import "../variables.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: space-between;
+  justify-content: space-between;
+  background-color: $main-color;
+  min-height: 4em;
+  width: 100%;
+  color: $text-color-light;
+ 
+  .header-logo {
+
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    & img {
+        background: transparent;
+        max-height: 5em;
+        aspect-ratio: 1;
+      }
+    
+  }
+  .header-nav {
+    display: block;
+
+    & a {
+      padding: 0 2em;
+      color: $text-color-light;
+      font-weight: normal;
+      font-size: medium;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        box-shadow-bottom: 0 0 1em 1em $text-color-light;
+      }
+    }
+  }
+}
