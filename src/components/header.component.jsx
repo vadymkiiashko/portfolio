@@ -30,6 +30,11 @@ const Header = () => {
           to='/projects'>
           projects
         </NavLink>
+        <NavLink
+          style={({ isActive }) => activeHighlight(isActive)}
+          to='/authentication'>
+          authentication
+        </NavLink>
       </nav>
     </div>
   );

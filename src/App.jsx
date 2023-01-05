@@ -10,6 +10,7 @@ import Project from "./components/body/project.component";
 import CustomError from "./components/customError";
 import Home from "./components/body/homePage.component";
 import { useState } from "react";
+import SignInSignup from "./components/signInSignup";
 
 function App() {
   const [error , setError] = useState(null);
@@ -19,7 +20,6 @@ function App() {
     setTimeout(() => {
       fetch("https://jsonplaceholder.typicode.com/users")
         .then((resposnse) => {
-          console.log(resposnse)
           if(!resposnse.ok){
             throw Error('could not detch data for that resource')
           }
@@ -36,6 +36,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/authentication' element={<SignInSignup />} />
         <Route path='/projects'>
           <Route index element={ error ? <CustomError  message ={error}/> : <Body props={projects} />} />
           <Route path=':id' element={<Project />} />
