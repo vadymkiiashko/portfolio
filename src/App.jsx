@@ -1,4 +1,4 @@
-import Header from "./components/header.component";
+import Header from "./components/navigation/header.component";
 import Body from "./components/body/body.component";
 import "./sass/App.scss";
 import { useEffect } from "react";
