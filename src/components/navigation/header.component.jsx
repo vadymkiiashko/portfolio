@@ -20,7 +20,7 @@ const Header = () => {
       <div className='header-logo'>
         <NavLink to='/'>
           <div>
-            <img src='../assets/png.png' alt='header logo' />
+            <img src='../../assets/png.png' alt='header logo' />
           </div>
         </NavLink>
       </div>

@@ -1,19 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const ProjectCard = ({id , name , username , snapshotImg}) => {
-
+const ProjectCard = ({ id, name, description, externalUrl,snapshotImg }) => {
   return (
-    <Link to ={`/projects/:${id}`}>
-    <div className='project-card'>
-        <img className='project-car--image' src={`https://robohash.org/${id}?set=set2&size=180x180`} alt={`preview of the ${name} project`} />
-        <div className='project-card--info'>
-            <span>{name}</span>
-            <span>{username}</span>
-        </div>
-    </div>
-    </Link>
-  )
-}
+    <Link to={`/projects/:${id}`}>
+      <div className='project-card'
+      style={{
+            backgroundImage: `linear-gradient(
+              rgba(22, 34, 60, 0.85), 
+              rgba(10, 10, 10, 0.45)
+            ),url(${snapshotImg})`,
 
-export default ProjectCard
+          }}>
+      
+        <div className='project-card--info'>
+          <span>{name}</span>
+          <span>{description}</span>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default ProjectCard;
