@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProjectCard = ({ id, name, description, externalUrl,snapshotImg }) => {
+const ProjectCard = ({ id, name, description }) => {
   return (
     <Link to={`/projects/:${id}`}>
       <div className='project-card'
@@ -9,12 +9,13 @@ const ProjectCard = ({ id, name, description, externalUrl,snapshotImg }) => {
             backgroundImage: `linear-gradient(
               rgba(22, 34, 60, 0.85), 
               rgba(10, 10, 10, 0.45)
-            ),url(${snapshotImg})`,
+            ),url(../assets/img/${name}/snapshotImg.PNG)`,
+            backgroundSize: 'cover',
 
           }}>
       
         <div className='project-card--info'>
-          <span>{name}</span>
+          <span className="card-info--name">{name}</span>
           <span>{description}</span>
         </div>
       </div>

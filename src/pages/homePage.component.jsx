@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import "../../sass/components/home.styles.scss";
-import UpArrow from "../upArrow";
-import Icon from "./icons";
+import "../sass/components/home.styles.scss";
+import UpArrow from "../components/upArrow";
+import Icon from "../components/body/icons";
 
 const Home = () => {
   const [banner, setBanner] = useState(1);

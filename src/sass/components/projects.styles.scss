@@ -17,28 +17,39 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    
-    
     border-radius: 2em;
     box-shadow: 0 0 1em 0.2em $secondary-color;
-    background-size: cover ;
-    background-position: center ;
+
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 1em 0.4em $main-color;
     }
-   
+
     .project-card--info {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       flex: 0 0 auto;
+      justify-content: space-evenly;
       width: 100%;
+      min-height: 5em;
       border-end-start-radius: 1em;
       border-end-end-radius: 1em;
       background-color: $pink;
-      & span{
-        text-decoration: none;
+      & span {
+        margin: 1em;
+        text-transform: capitalize;
+        font-size: 1em;
+        font-weight: bolder;
+        line-height: 1.5em;
+        color: $main-color;
+        & a{
+          text-decoration: none;
+        }
+      }
+      & .project-about {
+        span {
+        }
       }
     }
   }

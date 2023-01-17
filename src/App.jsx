@@ -1,14 +1,14 @@
 import Header from "./components/navigation/header.component";
-import Body from "./components/body/body.component";
+import Projects from "./pages/projects.page";
 import "./sass/App.scss";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentProjects } from "./app/features/projectSlice";
 import { Route, Routes } from "react-router-dom";
-import About from "./components/body/about.component";
+import About from "./pages/about.page";
 import Project from "./components/body/project.component";
 import CustomError from "./components/customError";
-import Home from "./components/body/homePage.component";
+import Home from "./pages/homePage.component";
 import { useState } from "react";
 import SignInSignup from "./components/signInSignup";
 
@@ -38,7 +38,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/authentication' element={<SignInSignup />} />
         <Route path='/projects'>
-          <Route index element={ error ? <CustomError  message ={error}/> : <Body props={projects} />} />
+          <Route index element={ error ? <CustomError  message ={error}/> : <Projects props={projects} />} />
           <Route path=':id' element={<Project />} />
         </Route>
         <Route path='/about' element={<About />} />

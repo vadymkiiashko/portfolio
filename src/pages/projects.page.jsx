@@ -1,12 +1,12 @@
 import React from "react";
-import "../../sass/components/body.styles.scss";
-import projects from "../../utils/data.js";
-import ProjectCard from "./projectcard.component";
+import "../sass/components/projects.styles.scss";
+import projects from "../utils/data.js";
+import ProjectCard from "../components/body/projectcard.component";
 import { useSelector, useDispatch } from "react-redux";
-import About from "./about.component";
 
 
-const Body = () => {
+
+const Projects = () => {
  // const { projects } = useSelector((state) => state.project);
   //const dispatch = useDispatch();
 
@@ -20,4 +20,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default Projects;
