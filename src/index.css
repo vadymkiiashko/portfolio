@@ -1,7 +1,15 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
+
 :root {
   font-family: "Roboto" , "Open Sans" ,  sans-serif;
   font-size: 16px;
@@ -12,4 +20,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 640px) {
+  * {
+    font-size: 10px;
+    font-weight: 400;
+  }
 }

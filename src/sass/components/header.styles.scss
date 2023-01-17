@@ -23,19 +23,5 @@
       }
     
   }
-  .header-nav {
-    display: block;
-
-    & a {
-      padding: 0 2em;
-      color: $text-color-light;
-      font-weight: normal;
-      font-size: medium;
-      text-transform: uppercase;
-      text-decoration: none;
-      &:hover {
-        box-shadow-bottom: 0 0 1em 1em $text-color-light;
-      }
-    }
-  }
+  
 }
