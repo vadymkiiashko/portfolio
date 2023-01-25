@@ -3,6 +3,12 @@ import { Card, Form, Button } from "react-bootstrap";
 import { useRef } from "react";
 import { signup } from "../app/features/projectSlice";
 import { useDispatch } from "react-redux";
+import {
+  myCreateUserWithEmailAndPassword,
+  mySignInWithEmailAndPassword,
+  mySignOut,
+  
+} from "../firebase";
 
 const Signup = () => {
   const emailRef = useRef();
@@ -35,7 +41,10 @@ const Signup = () => {
               className='w-100 mt-4'
               type='submit'
               onClick={() =>
-                dispatch(signup({ email: "vadym@g.g", password: "qwe123" }))
+                myCreateUserWithEmailAndPassword(
+                  emailRef.current.value,
+                  passwordRef.current.value
+                )
               }>
               Sign Up
             </Button>

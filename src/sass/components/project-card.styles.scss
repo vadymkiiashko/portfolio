@@ -55,9 +55,11 @@
       height: 30em;
       max-width: 60em;
       overflow: hidden;
+      position: relative;
       .picture {
         object-fit: contain;
-        width: 100%;
+        min-width: 100%;
+        max-width: 60em;
         transition: 1s;
       }
     }
@@ -77,9 +79,6 @@
     padding: 0.5em 1em;
     background-color: $text-color-light;
     border-radius: 2em;
-    .redirect {
-    }
-
     &:hover {
       scale: 1.5;
     }

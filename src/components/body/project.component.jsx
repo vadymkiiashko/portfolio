@@ -55,7 +55,7 @@ const Project = () => {
             <img
               className='picture'
               src={thumbnail}
-              alt='bankist app screenshot'
+              alt={`${name} app screenshot`}
               style={{ transform: `translateX(-${100 * currentImg}%)` }}
             />
           ))}

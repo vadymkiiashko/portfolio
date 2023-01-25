@@ -3,14 +3,9 @@
     "public": "dist",
     "ignore": [
       "firebase.json",
+      ".git",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }

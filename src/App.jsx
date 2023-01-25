@@ -11,6 +11,7 @@ import CustomError from "./components/customError";
 import Home from "./pages/homePage.component";
 import { useState } from "react";
 import SignInSignup from "./components/signInSignup";
+import Footer from "./components/footer.component";
 
 function App() {
   const [error , setError] = useState(null);
@@ -44,6 +45,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='*' element={<CustomError message ={'sorry, that page doesnt exist'}/>} />
       </Routes>
+      <Footer />
     </div>
   );
 }
