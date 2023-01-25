@@ -3,10 +3,9 @@ import { auth } from "../../firebase";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-
 const initialState = {
   projects: [],
-  user: {},
+  user: null,
 };
 
 export const projectSlice = createSlice({
@@ -24,29 +23,17 @@ export const projectSlice = createSlice({
     },
     ///needs changes-------------------------------------------------
     signup: (state, action) => {
-      const { email, password } = action.payload;
-      auth;
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          console.log('creating')
-          const user = userCredential.user;
-          console.log(user);
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(' errror ')
-          // ..
-        });
+      const user  = action.payload;
+      state.user = user;
     },
-    //----------------------------------------------------
+    signout: (state) => {
+      state.user = null;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setCurrentProjects, decrement, incrementByAmount, signup } =
+export const { setCurrentProjects, decrement, incrementByAmount, signup ,signout} =
   projectSlice.actions;
 
 export default projectSlice.reducer;
