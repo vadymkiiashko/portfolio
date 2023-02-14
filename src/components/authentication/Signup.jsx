@@ -51,6 +51,7 @@ const Signup = () => {
                     dispatch(signup(user.email))
                   }
                 } catch (error) {
+              //to do handle errors
                   console.log(error.code)
                 }
               }}

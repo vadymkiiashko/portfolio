@@ -3,8 +3,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  GoogleAuthProvider ,
-  signInWithPopup
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 
 import { initializeApp } from "firebase/app";
@@ -23,23 +23,17 @@ const firebaseConfig = {
 
 // google authentication
 const provider = new GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
 provider.setCustomParameters({
-  'login_hint': 'user@example.com'
+  login_hint: "user@example.com",
 });
 //
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
-
-
 const myCreateUserWithEmailAndPassword = async ({ email, password }) => {
-  const {user} = await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
-  return user
+  const { user } = await createUserWithEmailAndPassword(auth, email, password);
+  return user;
 };
 const mySignInWithEmailAndPassword = async ({ email, password }) => {
   const userCredentials = await signInWithEmailAndPassword(
@@ -51,18 +45,17 @@ const mySignInWithEmailAndPassword = async ({ email, password }) => {
 };
 //google sign in
 const mySignInWithGoogle = async () => {
-  const {user} = await signInWithPopup(auth, provider)
-  return user
-}
+  const { user } = await signInWithPopup(auth, provider);
+  return user;
+};
 
-
-const mySignOut = (auth) =>
+const mySignOut = () =>
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
+      return { status: true };
     })
     .catch((error) => {
-      // An error happened.
+      return { status: false, err: error };
     });
 
 export {
